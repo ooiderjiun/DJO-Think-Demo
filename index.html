@@ -1,39 +1,347 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="D–J–O THINK: an agentic learning environment that makes the student thinking journey visible.">
-<title>D–J–O THINK | Agentic Learning Environment</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D–J–O THINK</title>
 <style>
-:root{--navy:#10213b;--navy2:#172e50;--blue:#4778d5;--cyan:#70c6df;--green:#159b75;--amber:#d99a34;--ink:#172338;--muted:#69778b;--line:#e3e9f1;--paper:#f4f7fb;--white:#fff;--shadow:0 18px 55px #10213b12}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}button,textarea,input{font:inherit}button{cursor:pointer}.shell{max-width:1240px;margin:auto;padding:24px}.hero{background:linear-gradient(120deg,#10213b,#1c3d68 65%,#245b7c);color:white;border-radius:24px;padding:28px 32px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:320px;height:320px;border:1px solid #ffffff20;border-radius:50%;right:-70px;top:-160px;box-shadow:0 0 0 35px #ffffff08,0 0 0 75px #ffffff06}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:14px;background:#ffffff19;display:grid;place-items:center;font-weight:800;font-size:20px;letter-spacing:-2px;border:1px solid #ffffff35}.eyebrow{font-size:11px;letter-spacing:1.8px;text-transform:uppercase;color:#a9c4e7;font-weight:700}.hero h1{font-size:clamp(28px,4vw,43px);line-height:1.08;margin:24px 0 8px;letter-spacing:-1.3px}.hero p{max-width:720px;color:#d4e2f4;margin:0}.hero-foot{display:flex;justify-content:space-between;gap:12px;margin-top:26px;font-size:12px;color:#b8cbe2;position:relative;z-index:1}.pill{display:inline-flex;align-items:center;gap:7px;padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700;background:#eaf2ff;color:#2859a6}.pill.green{background:#e4f6ef;color:#087653}.pill.amber{background:#fff3dc;color:#96610d}.pill.dark{background:#ffffff18;color:#d7e8fa;border:1px solid #ffffff28}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:20px;margin-top:20px}.sidebar,.panel{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.sidebar{padding:18px;height:max-content;position:sticky;top:16px}.side-title{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:800;margin:2px 0 14px}.step{display:flex;align-items:center;gap:11px;padding:11px 10px;border-radius:12px;color:#647187;font-size:13px;font-weight:650;margin:3px 0}.step .num{width:27px;height:27px;border-radius:9px;background:#eef2f7;display:grid;place-items:center;font-size:12px}.step.active{background:#edf4ff;color:#2259ad}.step.active .num{background:#2d67c4;color:white}.step.done{color:#128361}.step.done .num{background:#e2f5ed;color:#128361}.side-note{margin-top:20px;padding:13px;background:#f5f8fc;border-radius:12px;color:#66758a;font-size:12px}.content{min-width:0}.panel{padding:24px}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:18px}.panel h2{font-size:25px;letter-spacing:-.6px;margin:7px 0 4px}.sub{color:var(--muted);margin:0;font-size:14px}.case{background:#f4f7fb;border:1px solid var(--line);border-radius:14px;padding:17px;margin:18px 0}.case strong{display:block;margin-bottom:6px}.case p{margin:0;color:#526178}.case-grid{display:grid;grid-template-columns:1fr 190px;gap:18px;align-items:center}.mito{width:100%;height:auto}.field{display:block;font-weight:700;font-size:13px;margin:16px 0 7px}textarea{width:100%;min-height:118px;border:1px solid #d8e0eb;border-radius:12px;padding:13px;resize:vertical;outline:none;background:#fff;color:var(--ink)}textarea:focus{border-color:#5c89d8;box-shadow:0 0 0 3px #4778d51a}.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.confidence{display:flex;gap:8px;margin-top:8px}.choice{border:1px solid var(--line);background:#fff;color:#5d6b80;border-radius:10px;padding:8px 13px;font-size:12px}.choice.selected{border-color:#4778d5;background:#edf4ff;color:#2459a7;font-weight:700}.btn{border:0;border-radius:11px;padding:11px 17px;background:#245eae;color:white;font-weight:750;font-size:13px;box-shadow:0 5px 14px #245eae22}.btn:hover{background:#194b91}.btn:disabled{opacity:.4;cursor:not-allowed}.btn.secondary{background:#edf2f8;color:#42536d;box-shadow:none}.btn.ghost{background:transparent;border:1px solid var(--line);color:#53627a;box-shadow:none}.actions{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.agent{border:1px solid var(--line);border-radius:13px;padding:13px;background:white;min-height:116px}.agent-top{display:flex;justify-content:space-between;align-items:center;gap:5px}.agent-icon{width:30px;height:30px;display:grid;place-items:center;background:#edf4ff;color:#2c64b8;border-radius:9px;font-size:15px}.agent h3{font-size:13px;margin:9px 0 2px}.agent p{font-size:11px;color:var(--muted);margin:0}.status{font-size:10px;font-weight:800;color:#13805e}.status.wait{color:#9b6a13}.console{background:#101e33;color:#dce8f8;border-radius:14px;padding:16px;margin:15px 0}.console-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.console-title{font-size:12px;font-weight:800;letter-spacing:.5px}.log{display:grid;gap:9px;font:11px/1.45 ui-monospace,SFMono-Regular,Consolas,monospace}.logline{display:grid;grid-template-columns:72px 1fr;gap:10px;color:#b8c9df}.logline b{color:#7ed3ba}.logline .warn{color:#f5c46f}.perspectives{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.perspective{border:1px solid var(--line);border-radius:13px;padding:14px;cursor:pointer;text-align:left;background:white}.perspective.selected{border:2px solid #4778d5;background:#f5f8ff;padding:13px}.perspective b{display:block;font-size:13px;margin-bottom:5px}.perspective span{font-size:12px;color:var(--muted)}.response{border:1px solid #dce6f3;border-radius:14px;padding:17px;margin-top:14px;background:#f8faff}.response h3{margin:0 0 7px;font-size:14px}.response p{margin:0;color:#475871;font-size:13px}.tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#60718a;font-weight:800}.timeline{border-left:2px solid #dce6f2;margin:12px 0 8px 8px;padding-left:18px;display:grid;gap:15px}.event{position:relative}.event:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:#2b70c4;left:-24px;top:5px;box-shadow:0 0 0 4px #edf4ff}.event h4{font-size:13px;margin:0 0 3px}.event p{font-size:12px;color:var(--muted);margin:0;white-space:pre-wrap}.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.metric{background:#f4f7fb;border-radius:12px;padding:14px}.metric b{display:block;font-size:22px;letter-spacing:-.6px}.metric span{font-size:11px;color:var(--muted)}.score{margin:13px 0}.score-head{display:flex;justify-content:space-between;font-size:12px;font-weight:700}.bar{height:8px;background:#e9eef4;border-radius:9px;margin-top:6px;overflow:hidden}.bar i{display:block;height:100%;background:#159b75;border-radius:9px}.callout{background:#eaf6f1;border:1px solid #cfeade;color:#216c55;border-radius:13px;padding:14px;font-size:13px;margin:14px 0}.footer{text-align:center;color:#8a96a8;font-size:11px;margin:18px 0 6px}.hidden{display:none!important}.tiny{font-size:11px;color:var(--muted)}@media(max-width:800px){.shell{padding:12px}.layout{grid-template-columns:1fr}.sidebar{position:static}.sidebar nav{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}.step{display:grid;justify-items:center;text-align:center;padding:8px 2px;font-size:10px;gap:4px}.side-note{display:none}.case-grid{grid-template-columns:1fr}.mito{max-width:180px;margin:auto}.agent-grid{grid-template-columns:repeat(2,1fr)}.panel{padding:17px}.hero{padding:22px}.hero-foot{flex-direction:column}}@media(max-width:480px){.agent-grid,.perspectives{grid-template-columns:1fr}.metric-grid{grid-template-columns:1fr 1fr}.panel-head{display:block}}
-</style>
-</head>
-<body><div class="shell">
-<header class="hero"><div class="brand"><div class="logo">D·J·O</div><div><div class="eyebrow">Agentic Learning Environment</div><div style="font-weight:800;font-size:15px">D–J–O THINK</div></div><span class="pill dark" style="margin-left:auto">MANAGEMENT DEMO · v0.2</span></div><h1>Think first. Challenge intelligence.<br>Own your learning.</h1><p>An adaptive, multi-agent learning experience that documents how students reason, evaluate AI and develop intellectual ownership.</p><div class="hero-foot"><span>CASE STUDY · BIOCHEMISTRY / DDS</span><span>SIMULATED AGENTS · NO LIVE AI CONNECTION</span></div></header>
-<div class="layout"><aside class="sidebar"><div class="side-title">Learning journey</div><nav id="nav"><div class="step active" data-s="0"><span class="num">1</span><span>Draft</span></div><div class="step" data-s="1"><span class="num">2</span><span>Orchestrate</span></div><div class="step" data-s="2"><span class="num">3</span><span>Judge</span></div><div class="step" data-s="3"><span class="num">4</span><span>Refine</span></div><div class="step" data-s="4"><span class="num">5</span><span>Own & evaluate</span></div></nav><div class="side-note"><b>Human agency by design</b><br>AI can generate perspectives and challenge reasoning. The student retains responsibility for judgement and the final answer.</div></aside>
-<main class="content"><section class="panel" id="stage"></section><div class="footer">D–J–O THINK · Prototype for project demonstration · Illustrative educational content</div></main></div></div>
+:root{--navy:#172b45;--blue:#356da5;--teal:#258477;--ink:#263548;--muted:#718096;--bg:#f5f7fa;--line:#e2e8f0;--white:#fff;--soft:#edf3f9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 Inter,Segoe UI,Arial,sans-serif}
+header{height:66px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:5}
+.brand{font-size:19px;font-weight:750;color:var(--navy);letter-spacing:-.3px}.brand small{display:block;font-size:11px;font-weight:450;color:var(--muted);letter-spacing:0}
+.header-right{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px}
+.avatar{width:30px;height:30px;border-radius:50%;background:#e8eff7;color:var(--blue);display:grid;place-items:center;font-weight:700}
+.portalbar{background:#fff;padding:12px 28px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.portalbtn{border:1px solid var(--line);background:#fff;color:#536477;padding:9px 17px;border-radius:8px;cursor:pointer;font-weight:650}
+.portalbtn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1320px;margin:auto;min-height:calc(100vh - 120px)}
+aside{padding:24px 14px;border-right:1px solid var(--line);background:#fbfcfd}
+.navlabel{font-size:10px;letter-spacing:1px;color:#93a0af;font-weight:750;padding:0 10px 8px}
+.sidebtn{width:100%;display:flex;align-items:center;gap:10px;text-align:left;padding:10px;border:0;border-radius:8px;background:transparent;color:#536477;cursor:pointer;margin:2px 0;font-weight:550}
+.sidebtn.active{background:var(--soft);color:var(--blue);font-weight:700}
+.stepno{width:22px;height:22px;border-radius:6px;background:#edf1f5;display:grid;place-items:center;font-size:11px}
+.sidebtn.active .stepno{background:#dce9f6;color:var(--blue)}
+main{padding:30px;max-width:1040px;width:100%;margin:0 auto}
+.page{display:none}.page.active{display:block}
+h1{font-size:25px;letter-spacing:-.5px;color:var(--navy);margin:0 0 5px}h2{font-size:17px;color:var(--navy);margin:0 0 12px}
+.subtitle{color:var(--muted);margin:0 0 23px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin:14px 0}
+.cardhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.tag{font-size:10px;letter-spacing:.3px;font-weight:750;color:#34725f;background:#e8f5ef;padding:4px 8px;border-radius:20px}
+.tag.blue{color:#356da5;background:#edf3fa}.tag.gold{color:#87621f;background:#fbf4e6}
+label{display:block;font-weight:650;margin:13px 0 6px;color:#34465a}
+textarea,input,select{width:100%;font:inherit;border:1px solid #d6dee8;border-radius:8px;padding:11px 12px;color:var(--ink);background:#fff;outline:none}
+textarea{min-height:115px;resize:vertical}textarea:focus,input:focus{border-color:#7da3ca;box-shadow:0 0 0 3px #eaf2fa}
+button.primary{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+button.ghost{background:#fff;border:1px solid var(--line);color:#536477;border-radius:8px;padding:9px 13px;cursor:pointer}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+.hint{font-size:12px;color:var(--muted)}.case{background:#f8fafc;border:1px solid var(--line);border-radius:9px;padding:14px;margin:12px 0}
+.chat{max-width:86%;padding:12px 14px;border-radius:11px;margin:12px 0;background:#f2f5f8}
+.chat.student{margin-left:auto;background:#eaf2fb}.chat .who{font-size:10px;letter-spacing:.5px;font-weight:800;color:#6b7c90;margin-bottom:4px}
+.quietnote{font-size:12px;color:#63758a;background:#f7f9fb;border:1px solid var(--line);padding:10px 12px;border-radius:8px;margin:12px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px}.stat strong{display:block;font-size:23px;color:var(--navy)}.stat span{font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#708095;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.evidence{padding:13px 14px;border:1px solid var(--line);border-radius:9px;margin:9px 0;background:#fff}.evidence p{margin:5px 0}.evidence small{color:var(--muted)}
+.agentrow{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.agentrow:last-child{border:0}
+.status{font-size:11px;color:#39745f;background:#edf7f2;border-radius:20px;padding:3px 8px;height:max-content}
+.notice{border-left:3px solid #c79b4b;background:#fcf8ef;padding:12px 14px;border-radius:5px;color:#765b28;font-size:12px;margin:13px 0}
+footer{text-align:center;padding:16px;color:#9aa5b2;font-size:10px}
+/* Persistent watermark required for public demo sharing */
+body::after{content:"DEMO";position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:20;pointer-events:none;user-select:none;font-size:clamp(84px,17vw,220px);font-weight:900;letter-spacing:.12em;color:rgba(23,43,69,.075);transform:rotate(-28deg);white-space:nowrap}
+.demo-watermark{position:fixed;right:18px;bottom:14px;z-index:21;pointer-events:none;background:rgba(23,43,69,.88);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:5px;padding:5px 10px;font-size:10px;font-weight:800;letter-spacing:1.5px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.share-note{max-width:1320px;margin:0 auto;padding:9px 28px;background:#fff8e8;border-bottom:1px solid #ead9b5;color:#755b2d;font-size:11px}
+@media(max-width:760px){header{padding:0 15px}.portalbar{padding:10px 15px}.layout{display:block}aside{display:flex;overflow:auto;padding:9px;border-right:0;border-bottom:1px solid var(--line)}.navlabel{display:none}.sidebtn{width:auto;white-space:nowrap;padding:8px}.stepno{display:none}main{padding:20px 14px}.stats{grid-template-columns:1fr 1fr}}
+
+.trace{margin-top:14px}.trace .evidence{border-left:3px solid #3978c5;padding:10px 14px;margin:8px 0;background:#f7f9fc;border-radius:7px}
+.scoreline{display:grid;grid-template-columns:190px 1fr 42px;gap:12px;align-items:center;margin:12px 0}
+.scorebar{height:9px;background:#e8edf4;border-radius:20px;overflow:hidden}.scorefill{height:100%;background:#3978c5;border-radius:20px}
+.scoreline small{color:#64748b}.scorevalue{text-align:right;font-weight:700}
+@media(max-width:650px){.scoreline{grid-template-columns:1fr 42px}.scoreline .scorebar{grid-column:1/-1;grid-row:2}}
+
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
+.timeline button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:11px;text-align:left;cursor:pointer;color:var(--ink)}
+.timeline button.selected{border:2px solid var(--blue);background:#f0f6fc;padding:10px}
+.timeline b{display:block;color:var(--navy);font-size:12px}.timeline small{color:var(--muted);font-size:10px}
+.mapgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
+.mapnode{border:1px solid var(--line);border-radius:10px;padding:13px;background:#fbfcfe;position:relative;min-width:0}
+.mapnode .nodehead{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:800;margin-bottom:8px}
+.mapnode p{font-size:12px;margin:0;color:#405166}.mapnode.studentnode{border-top:3px solid #3978c5}.mapnode.ainode{border-top:3px solid #9a86bf}.mapnode.decisionnode{border-top:3px solid #c79b4b}.mapnode.finalnode{border-top:3px solid #258477}
+.maparrow{display:none}.indicator-row{display:grid;grid-template-columns:130px 1fr 38px;gap:12px;align-items:center;margin:12px 0}.indicator-row small{color:var(--muted)}
+@media(max-width:760px){.timeline{grid-template-columns:repeat(2,1fr)}.mapgrid{grid-template-columns:1fr 1fr}.indicator-row{grid-template-columns:1fr 38px}.indicator-row .scorebar{grid-column:1/-1;grid-row:2}}
+</style></head>
+<body>
+<header><div class="brand">D–J–O THINK<small>Making student thinking visible in AI-assisted learning</small></div><div class="header-right"><span>DEMO ENVIRONMENT</span><div class="avatar">S</div></div></header>
+<div class="share-note"><b>DEMO / SAMPLE:</b> This is a demonstration prototype with illustrative data. If sharing this page, upload it to Google Drive, YouTube or OneDrive and set access to <b>Anyone with the link</b>.</div>
+<div class="demo-watermark" aria-hidden="true">DEMO · SAMPLE</div>
+<div class="portalbar">
+<button class="portalbtn active" id="studentPortal">Student workspace</button>
+<button class="portalbtn" id="lecturerPortal">Lecturer workspace</button>
+</div>
+<div class="layout">
+<aside id="studentNav">
+<div class="navlabel">YOUR LEARNING JOURNEY</div>
+<button class="sidebtn active" data-page="draft"><span class="stepno">1</span> Pre-AI draft</button>
+<button class="sidebtn" data-page="chat"><span class="stepno">2</span> AI workspace</button>
+<button class="sidebtn" data-page="ownership"><span class="stepno">3</span> Final answer</button>
+<button class="sidebtn" data-page="reflection"><span class="stepno">4</span> Reflection</button>
+</aside>
+<aside id="lecturerNav" style="display:none">
+<div class="navlabel">ASSESSMENT & INSIGHTS</div>
+<button class="sidebtn active" data-page="overview"><span class="stepno">1</span> Overview</button>
+<button class="sidebtn" data-page="orchestration"><span class="stepno">2</span> Agent orchestration</button>
+<button class="sidebtn" data-page="evidence"><span class="stepno">3</span> Evidence trail</button>
+<button class="sidebtn" data-page="validity"><span class="stepno">4</span> Validity checks</button>
+<button class="sidebtn" data-page="verification"><span class="stepno">5</span> Post-interaction verification</button>
+<button class="sidebtn" data-page="scoring"><span class="stepno">6</span> Rubric & competency scores</button>
+<button class="sidebtn" data-page="development"><span class="stepno">7</span> Development over time</button>
+</aside>
+<main>
+<!-- STUDENT PAGES -->
+<section id="draft" class="page active">
+<h1>Start with your own thinking</h1><p class="subtitle">Step 1 of 4 · Pre-AI draft</p>
+<div class="card"><div class="cardhead"><h2>Biochemistry · Electron transport chain</h2><span class="tag blue">DRAFT</span></div>
+<div class="case"><b>Case question</b><p style="margin-bottom:0">Antimycin A inhibits mitochondrial Complex III. Explain how this may affect electron transport and oxygen consumption.</p></div>
+<label for="draftText">Your initial explanation</label><textarea id="draftText">Antimycin A blocks Complex III, so electrons cannot pass efficiently from ubiquinol to cytochrome c. This slows the electron transport chain and should reduce oxygen consumption because fewer electrons reach Complex IV, where oxygen is reduced.</textarea>
+<div class="actions"><span class="hint">Write your own explanation before consulting AI.</span><button class="primary" id="saveDraft">Save and continue →</button></div>
+</div></section>
+
+<section id="chat" class="page">
+<h1>Work with AI</h1><p class="subtitle">Step 2 of 4 · Your AI workspace</p>
+<div class="quietnote">Use the chatbot as you normally would. D–J–O THINK works quietly in the background and does not interrupt your conversation.</div>
+<div class="card"><div class="cardhead"><h2>Biochemistry Assistant</h2><span class="tag green">Chat workspace</span></div>
+<div class="chat student"><div class="who">YOU</div>But Complex II can still transfer electrons to ubiquinone. Why would oxygen consumption decrease if electrons can still enter the chain through Complex II?</div>
+<div class="chat"><div class="who">AI ASSISTANT</div>Complex II can still reduce ubiquinone, but electrons from both Complex I and Complex II converge at the ubiquinone pool. They must still pass through Complex III to reach cytochrome c and Complex IV. When Complex III is inhibited, downstream electron flow is restricted, so oxygen reduction decreases.</div>
+<div class="chat student"><div class="who">YOU</div>So Complex II does not bypass Complex III. Both pathways converge at ubiquinone. Is that the correct interpretation?</div>
+<div class="chat"><div class="who">AI ASSISTANT</div>Yes. Complex II is an alternative entry point for electrons, not an alternative route around Complex III.</div>
+<div class="actions"><span class="hint">Sample conversation for demonstration.</span><button class="primary" id="toOwnership">Continue to final answer →</button></div></div>
+</section>
+
+<section id="ownership" class="page">
+<h1>Submit your final answer</h1><p class="subtitle">Step 3 of 4 · Your answer and supporting reference</p>
+<div class="card"><div class="cardhead"><h2>Your final explanation</h2><span class="tag blue">YOUR WORK</span></div>
+<label for="finalAnswer">Final answer</label><textarea id="finalAnswer">Antimycin A inhibits Complex III, preventing efficient transfer of electrons from ubiquinol to cytochrome c. Although Complex II can still transfer electrons to ubiquinone, this does not bypass Complex III because electrons from Complex I and Complex II converge at the ubiquinone pool. The block therefore restricts electron flow to Complex IV, reducing oxygen reduction and oxygen consumption.</textarea>
+<label for="source">Reference or source (optional)</label><input id="source" placeholder="Add a textbook, lecture note, article or URL if available" value="Biochemistry lecture notes — Mitochondrial electron transport chain">
+<p class="hint">You may include a reference if you used one. Leave this blank if no reference is available.</p>
+<div class="actions"><button class="ghost" id="backChat">← Back to AI workspace</button><button class="primary" id="toReflection">Continue to reflection →</button></div>
+</div></section>
+
+<section id="reflection" class="page">
+<h1>Reflect on your learning</h1><p class="subtitle">Step 4 of 4 · Your reflection</p>
+<div class="card"><h2>Think about your interaction with AI</h2>
+<label for="decision">What did you do with the AI's contribution?</label><select id="decision"><option>Modified the AI's explanation</option><option>Accepted the AI's explanation</option><option>Rejected the AI's explanation</option><option>Used it as a starting point for my own explanation</option></select>
+<label for="why">Explain your decision</label><textarea id="why">I modified my initial explanation. I had assumed Complex II might bypass the Complex III block. I now understand that both Complex I and Complex II transfer electrons to the ubiquinone pool, and electrons still need Complex III to reach cytochrome c and Complex IV.</textarea>
+<label for="reflectionText">What changed in your thinking? What did you learn or remain uncertain about?</label><textarea id="reflectionText">Initially, I thought Complex II might provide a bypass around the inhibition. I realised that the two entry pathways converge at ubiquinone and still depend on Complex III. The AI response helped me identify the gap, but I checked the pathway against my lecture notes before revising my answer.</textarea>
+<div class="actions"><button class="ghost" id="backFinal">← Back to final answer</button><button class="primary" id="submitReflection">Submit learning record</button></div>
+<p class="hint" id="submitStatus">Your draft, interaction, final answer and reflection form your learning record.</p></div>
+</section>
+
+<!-- LECTURER PAGES -->
+<section id="overview" class="page">
+<h1>Assessment overview</h1><p class="subtitle">Lecturer workspace · Review the student's human–AI collaboration evidence</p>
+<div class="stats"><div class="stat"><strong>5</strong><span>Evidence dimensions</span></div><div class="stat"><strong>6</strong><span>Student-originated records</span></div><div class="stat"><strong>1</strong><span>Verification claim requiring review</span></div></div>
+<div class="card"><div class="cardhead"><h2>D–J–O evidence summary</h2><span class="tag">PROVISIONAL ANALYSIS</span></div>
+<table><thead><tr><th>Dimension</th><th>Evidence observed</th><th>Lecturer review focus</th></tr></thead><tbody>
+<tr><td><b>Independent thinking</b><br>Draft</td><td>Pre-AI explanation of Complex III inhibition</td><td>Assess baseline accuracy and conceptual gaps</td></tr>
+<tr><td><b>Questioning</b><br>Judge</td><td>Question about Complex II and ubiquinone</td><td>Assess relevance and depth of the question</td></tr>
+<tr><td><b>Evaluation</b><br>Judge</td><td>Student reports checking lecture notes</td><td>Inspect source if available; reported checking is not authenticated</td></tr>
+<tr><td><b>Judgement</b><br>Judge</td><td>Student explains why the AI contribution was modified</td><td>Assess quality of rationale</td></tr>
+<tr><td><b>Synthesis & ownership</b><br>Own</td><td>Final answer and reflection</td><td>Assess coherent understanding and intellectual ownership</td></tr>
+</tbody></table></div>
+<div class="card"><h2>Lecturer's formative feedback</h2><p class="hint">Suggested prompt for lecturer review; not an automatic grade.</p><p>You identified an important limitation in your initial reasoning: Complex II is an alternative entry point, but it does not bypass Complex III. Continue to support pathway explanations with independent sources and distinguish what you verified from what you inferred.</p></div>
+</section>
+
+
+<section id="development" class="page">
+<h1>Cognitive development & contribution map</h1>
+<p class="subtitle">Longitudinal lecturer view · Follow observable evidence across multiple assignment submissions</p>
+<div class="notice"><b>Illustrative longitudinal simulation.</b> Four fictional assignments and all displayed indicators are demo data, not actual student results or validated measurements of internal cognition. D, J and O are separate evidence indicators—not a combined grade.</div>
+<div class="card">
+ <div class="cardhead"><h2>Student learning trajectory</h2><span class="tag blue">4 ASSIGNMENTS</span></div>
+ <p class="hint">Select an assignment to inspect its contribution map. The trend lines show provisional 0–4 evidence indicators for Draft, Judge and Own across the sequence.</p>
+ <div class="timeline" id="assignmentTimeline"></div>
+ <div style="margin-top:18px;overflow-x:auto"><svg id="trajectoryChart" viewBox="0 0 760 270" role="img" aria-label="Illustrative Draft, Judge and Own evidence indicators across four assignments" style="width:100%;min-width:540px;height:auto"></svg></div>
+ <div class="hint" style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px"><span>● Draft baseline</span><span>● Judge engagement</span><span>● Own synthesis</span></div>
+</div>
+<div class="card">
+ <div class="cardhead"><h2 id="mapTitle">Assignment 1 · Cell membrane transport</h2><span class="tag">CONTRIBUTION MAP</span></div>
+ <div class="mapgrid" id="contributionMap"></div>
+ <div class="notice" id="mapInterpretation">The map distinguishes the student's initial contribution, AI-provided context, the student's decisions and the final synthesis. It does not infer ownership from text differences alone.</div>
+</div>
+<div class="card">
+ <div class="cardhead"><h2>Evidence indicators by assignment</h2><span class="tag gold">PROVISIONAL</span></div>
+ <div id="assignmentIndicators"></div>
+ <p class="hint">Scores summarise observable evidence in this fictional demo. They are not a psychometric measure and should not be interpreted as proof of independent authorship or learning gain.</p>
+</div>
+</section>
+
+<section id="orchestration" class="page">
+<h1>Two-layer multi-agent execution</h1><p class="subtitle">A lightweight synchronous capture layer preserves the normal chatbot experience; specialist analysis runs asynchronously in the background.</p>
+<div class="card" style="background:#f0fbf5;border-color:#cdeedd"><div class="cardhead"><h2>Layer 1 · Synchronous capture</h2><span class="tag green">ACTIVE DURING CHAT</span></div>
+<b>Agent 1 · Evidence Capture</b><p class="hint">Records student events in real time: draft, prompts, revisions, final answer and reflection, with timestamps and provenance. This capture layer is designed not to add analytical processing to chatbot response time.</p></div>
+<div class="card" style="background:#f7f9fc"><div class="cardhead"><h2>Layer 2 · Asynchronous specialist analysis</h2><span class="tag blue">EVENT-TRIGGERED</span></div>
+<p class="hint">Agents 2–8 are activated selectively when relevant evidence arrives or a submission milestone is reached. Analysis is consolidated to avoid repeatedly processing unchanged content.</p></div>
+<div class="card"><div class="cardhead"><h2>Agent Orchestrator</h2><span class="tag green" id="agentState">Ready for analysis</span></div>
+<p class="hint">Detect event → Route specialist agent(s) → Gather evidence → Validate → Update lecturer view</p>
+<div class="agentrow"><div><b>1. Evidence Capture Agent</b><div class="hint">Captures the pre-AI draft, student–AI interaction, final submission and reflection with timestamps, sequence and source provenance. It records; it does not judge.</div></div><span class="status">All stages</span></div>
+<div class="agentrow"><div><b>2. Independent Thinking Agent</b><div class="hint">Establishes a pre-AI baseline from the student's initial explanation, knowledge and reasoning.</div></div><span class="status">Draft</span></div>
+<div class="agentrow"><div><b>3. Critical Questioning Agent</b><div class="hint">Analyses student-generated questions and challenges for relevance, conceptual focus and quality—not simply quantity.</div></div><span class="status">Interaction</span></div>
+<div class="agentrow"><div><b>4. Evaluation & Verification Agent</b><div class="hint">Examines how claims and sources are assessed; distinguishes reported checking from independently authenticated verification.</div></div><span class="status">Interaction</span></div>
+<div class="agentrow"><div><b>5. Judgement & Decision Agent</b><div class="hint">Analyses justified acceptance, rejection or modification of AI contributions and the student's rationale.</div></div><span class="status">Interaction</span></div>
+<div class="agentrow"><div><b>6. Intellectual Ownership Agent</b><div class="hint">Compares draft-to-final development and examines synthesis, final reasoning and reflection.</div></div><span class="status">Final + reflection</span></div>
+<div class="agentrow"><div><b>7. Evidence Validation Agent · Auditor</b><div class="hint">Performs adversarial interrogation: flags unsupported inferential leaps, checks whether findings are grounded in student-originated evidence, detects double-counting, tests rubric alignment and challenges conflicting interpretations. It can downgrade confidence or abstain.</div></div><span class="status">Adversarial audit</span></div>
+<div class="agentrow"><div><b>8. Assessment Synthesis Agent</b><div class="hint">Maps validated evidence to Bloom cognitive levels and scientific competencies; generates provisional scores, rationales and confidence for lecturer review.</div></div><span class="status">Assessment</span></div>
+<button class="primary" id="runAgent">Run simulated event-driven workflow</button>
+<p class="hint" id="agentResult">The sequence below is a simulation. Agent 1 represents synchronous capture; Agents 2–8 represent asynchronous, event-triggered analysis routed by the orchestrator.</p>
+<div id="workflowTrace" class="trace">
+<div class="evidence"><b>Waiting for workflow</b><p>Run the simulation to see how a student event activates only the relevant agents.</p></div>
+</div></div>
+<div class="notice">The orchestrator coordinates; Agent 1 captures synchronously; Agents 2–8 analyse asynchronously. Agent 7 acts as an adversarial auditor, not an automatic truth detector. The lecturer retains final authority.</div>
+</section>
+
+<section id="evidence" class="page">
+<h1>Evidence trail</h1><p class="subtitle">Student contributions are primary evidence. AI responses are contextual references only.</p>
+<div class="notice">The system records observable evidence. “Not observed” does not mean an action did not happen outside the captured record.</div>
+<div class="card">
+<div class="evidence"><b>01 · Pre-AI draft</b><p id="evDraft">Student's initial explanation of Complex III inhibition.</p><small>Source: student draft · Draft · Observed</small></div>
+<div class="evidence"><b>02 · Student question</b><p>“But Complex II can still transfer electrons to ubiquinone. Why would oxygen consumption decrease?”</p><small>Source: student chatbot message · Judge · Observed</small></div>
+<div class="evidence"><b>03 · Student challenge</b><p>“So Complex II does not bypass Complex III. Both pathways converge at ubiquinone.”</p><small>Source: student chatbot message · Judge · Observed</small></div>
+<div class="evidence"><b>04 · Final answer and reference</b><p id="evFinal">Student's submitted final explanation.</p><small id="evSource">Source: student final answer and optional reference · Own · Submitted</small></div>
+<div class="evidence"><b>05 · Reflection and judgement</b><p id="evReflection">Student's explanation of how the AI contribution was used and what changed.</p><small>Source: student reflection · Judge / Own · Submitted</small></div>
+<div class="evidence"><b>AI response · context only</b><p>The assistant's explanation is retained only to contextualise the student's questions and decisions. It is not counted as student thinking.</p><small>Source: chatbot · Context, not primary evidence</small></div>
+</div></section>
+
+<section id="validity" class="page">
+<h1>Validity and evidence checks</h1><p class="subtitle">The evidence engine tests the quality of records and limits over-interpretation.</p>
+<div class="card"><table><thead><tr><th>Check</th><th>Demo status</th><th>Interpretation</th></tr></thead><tbody>
+<tr><td>Source traceability</td><td><span class="tag">Pass</span></td><td>Findings link to a student draft, message, final answer or reflection.</td></tr>
+<tr><td>Rubric relevance</td><td><span class="tag">Pass</span></td><td>Evidence maps to Draft, Judge or Own—not generic chatbot activity.</td></tr>
+<tr><td>Inference strength</td><td><span class="tag gold">Qualified</span></td><td>A relevant question is evidence of questioning, not proof of deep critical thinking.</td></tr>
+<tr><td>Verification authenticity</td><td><span class="tag gold">Not confirmed</span></td><td>A student-reported source check is not proof that the source was consulted.</td></tr>
+<tr><td>Missing evidence</td><td><span class="tag gold">Abstain if needed</span></td><td>Uncaptured activity is labelled “not observed”, not “not done”.</td></tr>
+</tbody></table></div>
+<div class="card"><h2>Planned validation</h2><ul><li>Expert-annotated student interaction dataset.</li><li>Agreement between agent evidence classifications and lecturer judgements.</li><li>Precision, recall, false-positive and false-negative analysis.</li><li>Calibration, traceability and appropriate abstention when evidence is insufficient.</li><li>Separate evaluation of changes in student D–J–O performance over time.</li></ul></div>
+</section>
+<section id="verification" class="page">
+<h1>Post-interaction verification</h1><p class="subtitle">Additional evidence after the normal AI conversation · No interruption or in-chat coaching</p>
+<div class="notice"><b>Illustrative workflow.</b> These are proposed post-interaction safeguards, not live assessments in this prototype. A flag requests clarification; it is not evidence of misconduct.</div>
+<div class="card"><div class="cardhead"><h2>A. Rapid conceptual diagnostic</h2><span class="tag blue">~60 SECONDS</span></div>
+<p>Example generated from the student's draft-to-final conceptual change.</p><div class="case"><b>Question</b><p>Antimycin A inhibits Complex III. Which statement best explains why electrons entering through Complex II cannot bypass the inhibition?</p>
+<label><input type="radio" name="diagnostic" value="a" style="width:auto"> Complex II transfers electrons directly to cytochrome c.</label>
+<label><input type="radio" name="diagnostic" value="b" style="width:auto"> Electrons from Complex II enter the ubiquinone pool and still require Complex III.</label>
+<label><input type="radio" name="diagnostic" value="c" style="width:auto"> Complex II replaces Complex IV when Complex III is inhibited.</label>
+<button class="primary" id="checkDiagnostic">Check sample response</button><p id="diagnosticFeedback" class="hint">Select one answer. This sample demonstrates the proposed format only.</p></div>
+<p class="hint">A short diagnostic adds evidence of conceptual understanding; it cannot prove independent authorship or exclude use of external AI.</p></div>
+<div class="card"><div class="cardhead"><h2>B. Targeted human micro-viva</h2><span class="tag gold">LECTURER REVIEW</span></div>
+<p><b>Illustrative review flag:</b> The student's final explanation differs from the initial draft on whether Complex II bypasses Complex III. A short clarification may help establish whether the student can explain the pathway.</p>
+<div class="evidence"><b>Suggested question 1</b><p>Trace the route taken by electrons from Complex II to oxygen, identifying where Complex III acts.</p></div>
+<div class="evidence"><b>Suggested question 2</b><p>What would happen to electron flow if Complex III were inhibited, even when Complex II remained functional?</p></div>
+<div class="evidence"><b>Suggested question 3</b><p>Which part of your initial explanation would you now revise, and why?</p></div>
+<p class="hint">A configurable review sample (e.g. 10–15% during an initial pilot) should be calibrated against workload, false positives and expert review—not hard-coded as a misconduct threshold.</p></div>
+<div class="card"><div class="cardhead"><h2>Three-tier source verification</h2><span class="tag">EVIDENCE STATUS</span></div>
+<table><thead><tr><th>Level</th><th>Meaning</th><th>Example in this record</th></tr></thead><tbody>
+<tr><td><b>1 · Reported</b></td><td>Student states that a source was checked.</td><td>Student reports checking lecture notes.</td></tr>
+<tr><td><b>2 · Documented</b></td><td>Student supplies an identifiable source, citation or passage.</td><td>Lecture notes are named, but no page or passage is attached.</td></tr>
+<tr><td><b>3 · Authenticated</b></td><td>System or lecturer inspects the source directly and confirms whether it supports the claim.</td><td>Not established in this demonstration.</td></tr>
+</tbody></table><p class="hint">Semantic similarity can help locate relevant passages, but similarity alone does not establish that a source supports a claim. Level 1 is reported, Level 2 is documented, and Level 3 is authenticated.</p></div>
+</section>
+<section id="scoring" class="page">
+<h1>Rubric & competency scores</h1><p class="subtitle">Evidence-backed provisional assessment · Lecturer review and final decision required</p>
+<div class="notice">Illustrative scores for this demonstration only. Scores are not actual student results and are not generated by a live model.</div>
+<div class="card"><div class="cardhead"><h2>Performance scale</h2><span class="tag">0–4 SCALE</span></div>
+<table><thead><tr><th>Score</th><th>Performance descriptor</th></tr></thead><tbody>
+<tr><td><b>4 · Advanced</b></td><td>Consistently demonstrates strong, independent and well-justified performance.</td></tr>
+<tr><td><b>3 · Proficient</b></td><td>Demonstrates appropriate understanding and application, with generally sound reasoning.</td></tr>
+<tr><td><b>2 · Developing</b></td><td>Demonstrates partial understanding; further reasoning, verification or justification is needed.</td></tr>
+<tr><td><b>1 · Beginning</b></td><td>Limited evidence, substantial dependence on AI output or significant inaccuracies.</td></tr>
+<tr><td><b>0 · Insufficient evidence</b></td><td>No assessable evidence in the captured record. This does not mean the student lacks the ability.</td></tr>
+</tbody></table></div>
+<div class="card"><div class="cardhead"><h2>A. Cognitive performance</h2><span class="tag">BLOOM-ALIGNED</span></div>
+<div id="cognitiveScores"></div></div>
+<div class="card"><div class="cardhead"><h2>B. Scientific competencies</h2><span class="tag">COMPETENCY PROFILE</span></div>
+<div id="competencyScores"></div></div>
+<div class="card"><div class="cardhead"><h2>Evidence-backed interpretation</h2></div>
+<table><thead><tr><th>Criterion</th><th>Score</th><th>Evidence and rationale</th></tr></thead><tbody>
+<tr><td>Evaluate</td><td>2/4</td><td>Student questioned an AI explanation but the reported lecture-note check is not independently authenticated.</td></tr>
+<tr><td>Critical thinking</td><td>3/4</td><td>Student identified a limitation in the AI response and requested clarification; this is evidence of critical engagement, not proof of deep critical thinking by itself.</td></tr>
+<tr><td>Create</td><td>3/4</td><td>Final explanation integrates the student's initial understanding with a revised account of the electron transport pathway.</td></tr>
+<tr><td>Scientific integrity</td><td>2/4</td><td>A source-checking claim is present, but source consultation and citation accuracy require lecturer confirmation.</td></tr>
+</tbody></table>
+<p class="hint">Each proposed score should be linked to exact student-generated evidence, a rubric rationale, confidence and any limitation. AI responses are contextual evidence, not student performance.</p></div>
+<div class="card"><h2>Assessment governance</h2><ul>
+<li>Do not infer critical thinking from prompt count, chat length or a single challenge.</li>
+<li>One item of evidence may inform more than one criterion, but must not be double-counted as independent evidence.</li>
+<li>Distinguish student-reported verification from authenticated source checking.</li>
+<li>Use “not observed in this captured record” where evidence is missing.</li>
+<li>Lecturers can accept, modify or override provisional scores and provide formative feedback.</li>
+</ul><span class="tag gold">Lecturer decision required</span></div>
+</section>
+</main></div>
+<footer>Concept prototype · Scripted chatbot exchange and simulated agent workflow · Includes illustrative post-interaction diagnostic and micro-viva · No live LLM, production agents, backend or persistent storage</footer>
 <script>
-const state={stage:0,draft:'',confidence:'Moderate',perspective:'science',judgement:'',refinement:'',finalAnswer:'',reflection:'',log:[],agents:[],run:false};
-const $=s=>document.querySelector(s);const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const agentDefs=[['Draft Guardian','Preserves the pre-AI baseline','◈'],['Biochemistry Expert','Checks the scientific mechanism','⚗'],['Perspective Agent','Creates alternative representations','◇'],['Critical Challenger','Tests assumptions and reasoning','⇄'],['Evidence Checker','Flags claims needing verification','✓'],['Learning Analyst','Tracks changes in thinking','⌁'],['Ownership Evaluator','Assesses the documented journey','◎']];
-function setStage(n){state.stage=n;render()}
-function updateNav(){document.querySelectorAll('.step').forEach((e,i)=>{e.className='step'+(i===state.stage?' active':i<state.stage?' done':'')})}
-function header(kicker,title,desc){return `<div class="panel-head"><div><span class="pill ${kicker==='D · DRAFT'?'':'green'}">${kicker}</span><h2>${title}</h2><p class="sub">${desc}</p></div><span class="tiny">${state.stage+1} / 5</span></div>`}
-function btn(label,fn,disabled=false,cls=''){return `<button class="btn ${cls}" ${disabled?'disabled':''} onclick="${fn}">${label}</button>`}
-function render(){updateNav();const el=$('#stage');if(state.stage===0){el.innerHTML=header('D · DRAFT','Think before AI','The student’s first response is captured before any substantive AI assistance is provided.')+`
-<div class="case"><div class="case-grid"><div><span class="tag">Clinical challenge</span><strong>A patient accidentally ingests Antimycin A.</strong><p>Antimycin A inhibits Complex III of the mitochondrial electron transport chain. What metabolic consequences would you expect in the patient’s cells? Explain your reasoning.</p></div><svg class="mito" viewBox="0 0 220 130" role="img" aria-label="Simplified electron transport chain"><rect x="8" y="12" width="204" height="106" rx="14" fill="#e8eef7"/><path d="M22 90 H197" stroke="#7a9ac3" stroke-width="3"/><g font-size="10" font-weight="700" text-anchor="middle"><rect x="25" y="51" width="30" height="35" rx="5" fill="#6a9bd4"/><text x="40" y="72" fill="white">I</text><rect x="70" y="58" width="30" height="28" rx="5" fill="#8bb8a5"/><text x="85" y="76" fill="white">II</text><rect x="115" y="43" width="34" height="43" rx="5" fill="#d99a34"/><text x="132" y="68" fill="white">III</text><rect x="166" y="51" width="30" height="35" rx="5" fill="#6a9bd4"/><text x="181" y="72" fill="white">IV</text></g><path d="M55 68 H68 M100 72 H112 M150 68 H163" stroke="#526f91" stroke-width="2"/><path d="M128 25 L137 34 M137 25 L128 34" stroke="#b66a20" stroke-width="3"/><text x="132" y="17" font-size="8" text-anchor="middle" fill="#8a5b17">BLOCK</text><text x="110" y="108" font-size="8" text-anchor="middle" fill="#63748b">Simplified schematic</text></svg></div></div>
-<label class="field" for="draft">Your initial hypothesis</label><textarea id="draft" placeholder="I think Antimycin A will... because...">${esc(state.draft)}</textarea><label class="field">How confident are you?</label><div class="confidence">${['Unsure','Moderate','Confident'].map(x=>`<button class="choice ${state.confidence===x?'selected':''}" onclick="state.confidence='${x}';render()">${x}</button>`).join('')}</div><div class="callout">◈ <b>Draft Guardian:</b> Your original response is preserved as a baseline. The AI will not reveal the substantive answer before this step.</div><div class="actions"><span class="tiny">A short explanation is enough. Uncertainty is welcome.</span>${btn('Lock draft & continue →',"saveDraft()",state.draft.trim().length<12)}</div>`;
-}else if(state.stage===1){el.innerHTML=header('AGENT ORCHESTRATION','Specialists, coordinated by one orchestrator','The system decomposes the learning task, activates relevant agents and consolidates their outputs.')+`<div class="console"><div class="console-head"><span class="console-title">◉ ORCHESTRATOR CONTROL ROOM</span><span class="pill dark">${state.run?'RUN COMPLETE':'READY TO RUN'}</span></div><p style="font-size:12px;color:#bdcce0;margin:0 0 12px">Objective: help the student examine Complex III inhibition without taking over their reasoning.</p><div class="log" id="log">${state.log.length?state.log.map(x=>`<div class="logline"><span>${x.time}</span><span><b>${esc(x.agent)}</b> · ${esc(x.msg)}</span></div>`).join(''):'<div style="color:#a8bad2">Awaiting orchestration command…</div>'}</div></div><div class="agent-grid">${agentDefs.map((a,i)=>`<div class="agent"><div class="agent-top"><span class="agent-icon">${a[2]}</span><span class="status ${state.agents.includes(i)?'':'wait'}">${state.agents.includes(i)?'● COMPLETE':'○ STANDBY'}</span></div><h3>${a[0]}</h3><p>${a[1]}</p></div>`).join('')}</div><div class="callout"><b>Jev-inspired decision routing:</b> structured decisions determine which agent runs next. This demo uses transparent local rules, not the Jev runtime.</div><div class="actions"><button class="btn secondary" onclick="setStage(0)">← Back</button>${btn(state.run?'Re-run orchestration':'Run multi-agent workflow ▶','runAgents()',false)}</div>`;
-}else if(state.stage===2){el.innerHTML=header('J · JUDGE','Interrogate the perspectives','Explore different explanations, then decide what is useful, accurate or questionable.')+`<div class="case"><span class="tag">Your preserved draft</span><p style="margin:6px 0 0">${esc(state.draft)}</p></div><div class="perspectives">${[['science','Scientific explanation','Electron flow and proton pumping'],['analogy','Analogy','A blocked checkpoint on a transport route'],['challenge','Counterargument','Does inhibition stop every electron entry pathway?'],['clinical','Clinical perspective','Consequences for cellular energy demand']].map(p=>`<button class="perspective ${state.perspective===p[0]?'selected':''}" onclick="state.perspective='${p[0]}';render()"><b>${p[1]}</b><span>${p[2]}</span></button>`).join('')}</div><div class="response"><h3 id="responseTitle"></h3><p id="responseText"></p><div class="tiny" style="margin-top:9px">Simulated agent response · Illustrative content</div></div><label class="field" for="judgement">Your critical judgement</label><textarea id="judgement" placeholder="I accept/question this explanation because...">${esc(state.judgement)}</textarea><div class="actions"><button class="btn secondary" onclick="setStage(1)">← Agent console</button>${btn('Save judgement →','saveJudgement()',state.judgement.trim().length<10)}</div>`;showPerspective();
-}else if(state.stage===3){el.innerHTML=header('J · REFINE','Make your thinking evolve','Compare your original hypothesis with what you have evaluated. Record what changed and why.')+`<div class="timeline"><div class="event"><h4>1 · Original hypothesis</h4><p>${esc(state.draft)}</p></div><div class="event"><h4>2 · Critical judgement</h4><p>${esc(state.judgement)}</p></div></div><div class="callout"><b>Learning Analyst prompt</b><br>What was incomplete in your first explanation? What evidence or reasoning caused you to revise it? What remains uncertain?</div><label class="field" for="refinement">Your refined understanding</label><textarea id="refinement" style="min-height:150px" placeholder="My understanding has changed because...">${esc(state.refinement)}</textarea><div class="actions"><button class="btn secondary" onclick="setStage(2)">← Back</button>${btn('Save refinement →','saveRefinement()',state.refinement.trim().length<10)}</div>`;
-}else{el.innerHTML=header('O · OWN','Own your answer. Review your journey.','The student creates the final explanation, then receives an evidence-linked formative report.')+`<label class="field" for="finalAnswer">Final answer in your own words</label><textarea id="finalAnswer" style="min-height:145px" placeholder="Antimycin A inhibits Complex III, resulting in...">${esc(state.finalAnswer)}</textarea><label class="field" for="reflection">Reflection: what did you learn about using AI?</label><textarea id="reflection" placeholder="The most important change in my understanding was...">${esc(state.reflection)}</textarea><div class="actions"><button class="btn secondary" onclick="setStage(3)">← Back</button>${btn('Generate Thinking Development Report','report()',state.finalAnswer.trim().length<10)}</div><div id="reportArea"></div>`;}}
-function saveDraft(){state.draft=$('#draft').value.trim();if(state.draft.length<12)return;state.log.push({time:'09:41:02',agent:'Draft Guardian',msg:'Initial response captured and locked.'});setStage(1)}
-function runAgents(){state.run=true;state.agents=[0,1,2,3,4,5];state.log=[{time:'09:41:02',agent:'Orchestrator',msg:'Draft received. Task decomposed into specialist subtasks.'},{time:'09:41:03',agent:'Biochemistry Expert',msg:'Mechanism review: Complex III inhibition.'},{time:'09:41:03',agent:'Perspective Agent',msg:'Analogy and alternative explanation prepared.'},{time:'09:41:04',agent:'Critical Challenger',msg:'Testing claim that all electron transport stops.'},{time:'09:41:05',agent:'Evidence Checker',msg:'Flagged test claim: Antimycin A directly inhibits Complex II. Incorrect.'},{time:'09:41:06',agent:'Learning Analyst',msg:'Baseline captured; awaiting student judgement and refinement.'},{time:'09:41:06',agent:'Orchestrator',msg:'Agent outputs consolidated. Student challenge ready.'}];render()}
-const perspectiveData={science:['Scientific explanation','Antimycin A blocks electron transfer through Complex III. Complex I and II can still transfer electrons to ubiquinone, but downstream electron flow is restricted at Complex III. Proton pumping by Complex III and downstream Complex IV decreases, reducing the proton-motive force and ATP synthesis.'],analogy:['The blocked checkpoint','Imagine electrons as vehicles moving along a route. Complex III is a checkpoint. Blocking it causes traffic to accumulate upstream, while fewer vehicles reach downstream stations. The cell becomes less able to maintain the proton gradient that drives ATP synthesis.'],challenge:['Critical counterargument','Does Complex III inhibition mean every electron-entry pathway is directly inhibited? Not necessarily. Complex I and II feed electrons into the ubiquinone pool. Why, then, can neither pathway restore normal downstream electron flow when Complex III is blocked?'],clinical:['Clinical perspective','Impaired oxidative phosphorylation reduces cellular ATP availability and can alter oxygen consumption. Cells may increase reliance on glycolysis, but compensation is limited and depends on tissue and metabolic context.']};
-function showPerspective(){const d=perspectiveData[state.perspective];$('#responseTitle').textContent=d[0];$('#responseText').textContent=d[1]}
-function saveJudgement(){state.judgement=$('#judgement').value.trim();if(state.judgement.length>=10){state.log.push({time:'09:43:12',agent:'Learning Analyst',msg:'Student judgement recorded.'});setStage(3)}}
-function saveRefinement(){state.refinement=$('#refinement').value.trim();if(state.refinement.length>=10){state.log.push({time:'09:44:38',agent:'Learning Analyst',msg:'Student revision recorded and linked to original draft.'});setStage(4)}}
-function report(){state.finalAnswer=$('#finalAnswer').value.trim();state.reflection=$('#reflection').value.trim();if(state.finalAnswer.length<10)return;const area=$('#reportArea');area.innerHTML=`<div class="callout" style="margin-top:20px"><b>◎ Ownership Evaluator · Report generated</b><br>Illustrative formative feedback based on the observable record. This is not a validated student grade or a claim to read internal thoughts.</div><div class="metric-grid"><div class="metric"><b>5</b><span>Learning stages documented</span></div><div class="metric"><b>6</b><span>Specialist agents invoked</span></div><div class="metric"><b>1</b><span>Student-owned final answer</span></div></div><h3 style="font-size:15px">Thinking development record</h3><div class="timeline"><div class="event"><h4>Draft · Baseline</h4><p>${esc(state.draft)}</p></div><div class="event"><h4>Judge · Evaluation</h4><p>${esc(state.judgement)}</p></div><div class="event"><h4>Refine · Revision</h4><p>${esc(state.refinement)}</p></div><div class="event"><h4>Own · Final answer</h4><p>${esc(state.finalAnswer)}</p></div><div class="event"><h4>Reflection</h4><p>${esc(state.reflection||'No reflection submitted.')}</p></div></div><h3 style="font-size:15px;margin-top:20px">Illustrative assessment dimensions</h3>${[['Draft · Independent thinking',20,80],['Judge · Critical engagement',30,85],['Refine · Adaptive thinking',20,80],['Own · Intellectual ownership',20,85],['Reflection · Metacognition',10,75]].map(x=>`<div class="score"><div class="score-head"><span>${x[0]} <span style="color:#8995a5;font-weight:500">(${x[1]}%)</span></span><span>${x[2]}/100*</span></div><div class="bar"><i style="width:${x[2]}%"></i></div></div>`).join('')}<p class="tiny">*Illustrative placeholder values for the demo. A real score requires validated rubrics, evidence-linked reasoning and educator moderation.</p><div class="actions"><button class="btn ghost" onclick="window.print()">Print report</button><button class="btn" onclick="resetDemo()">↻ Restart demo</button></div>`;area.scrollIntoView({behavior:'smooth',block:'start'})}
-function resetDemo(){Object.assign(state,{stage:0,draft:'',confidence:'Moderate',perspective:'science',judgement:'',refinement:'',finalAnswer:'',reflection:'',log:[],agents:[],run:false});render()}
-document.querySelectorAll('.step').forEach(e=>e.addEventListener('click',()=>{const n=+e.dataset.s;if(n<=state.stage)setStage(n)}));render();
+let portal='student',draftSaved=false,reflectionSubmitted=false;
+const studentPages=['draft','chat','ownership','reflection'],lecturerPages=['overview','orchestration','evidence','validity','verification','scoring','development'];
+function activatePage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.sidebtn').forEach(x=>x.classList.toggle('active',x.dataset.page===id))}
+function setPortal(which){portal=which;let s=which==='student';document.getElementById('studentNav').style.display=s?'block':'none';document.getElementById('lecturerNav').style.display=s?'none':'block';document.getElementById('studentPortal').classList.toggle('active',s);document.getElementById('lecturerPortal').classList.toggle('active',!s);activatePage(s?'draft':'overview')}
+document.getElementById('studentPortal').onclick=()=>setPortal('student');document.getElementById('lecturerPortal').onclick=()=>setPortal('lecturer');
+document.querySelectorAll('.sidebtn').forEach(b=>b.onclick=()=>{
+ const allowed=portal==='student'?studentPages:lecturerPages;
+ if(allowed.includes(b.dataset.page)) activatePage(b.dataset.page);
+});
+document.getElementById('saveDraft').onclick=()=>{draftSaved=true;activatePage('chat')};
+document.getElementById('toOwnership').onclick=()=>activatePage('ownership');
+document.getElementById('backChat').onclick=()=>activatePage('chat');
+document.getElementById('toReflection').onclick=()=>activatePage('reflection');
+document.getElementById('backFinal').onclick=()=>activatePage('ownership');
+document.getElementById('submitReflection').onclick=()=>{reflectionSubmitted=true;document.getElementById('submitStatus').textContent='Your learning record has been submitted in this demonstration.';document.getElementById('evDraft').textContent=document.getElementById('draftText').value;document.getElementById('evFinal').textContent=document.getElementById('finalAnswer').value;document.getElementById('evSource').textContent='Reference: '+(document.getElementById('source').value.trim()||'No reference supplied')+' · Student-submitted';document.getElementById('evReflection').textContent=document.getElementById('decision').value+'. '+document.getElementById('why').value+' Reflection: '+document.getElementById('reflectionText').value;setPortal('lecturer');activatePage('overview')};
+document.getElementById('checkDiagnostic').onclick=()=>{const chosen=document.querySelector('input[name=diagnostic]:checked');const out=document.getElementById('diagnosticFeedback');if(!chosen){out.textContent='Please select an answer.';return;}out.textContent=chosen.value==='b'?'Correct in this illustrative example. Complex II feeds electrons into ubiquinone; downstream transfer still requires Complex III.':'Not quite. Revisit the convergence at the ubiquinone pool and the shared downstream route through Complex III.';};
+document.getElementById('runAgent').onclick=()=>{
+ document.getElementById('agentState').textContent='Workflow simulated';
+ const steps=[
+ ['Event 1 · Pre-AI draft submitted','Orchestrator activates Evidence Capture + Independent Thinking. The capture agent stores the draft and provenance; the specialist establishes the student baseline.'],
+ ['Event 2 · Student asks and challenges the chatbot','Capture records the student-originated message. Critical Questioning analyses its relevance and conceptual focus. The AI answer remains context only.'],
+ ['Event 3 · Student reports checking lecture notes','Capture stores the submitted verification claim. Evaluation & Verification distinguishes reported checking from independently authenticated source use.'],
+ ['Event 4 · Student modifies the AI explanation','Judgement & Decision analyses the student choice and rationale; capture preserves the sequence of change.'],
+ ['Event 5 · Final answer and reflection submitted','Intellectual Ownership compares the pre-AI draft with the final answer and reflection to examine synthesis and development.'],
+ ['Event 6 · Background analysis and validation','Agent 1 captures synchronously; Agents 2–8 run asynchronously after relevant events or submission milestones. Agent 7 performs adversarial review, checks evidence links and deterministic fields, and can downgrade confidence or abstain.'],
+ ['Event 7 · Assessment synthesis and optional follow-up','Assessment Synthesis maps validated evidence to the five cognitive levels and four scientific competencies for lecturer review. A short post-interaction diagnostic or targeted micro-viva may add evidence where needed; a flag is not a misconduct finding.']
+ ];
+ document.getElementById('workflowTrace').innerHTML=steps.map((s,i)=>`<div class="evidence"><b>${s[0]}</b><p>${s[1]}</p></div>`).join('');
+ document.getElementById('agentResult').textContent='Only lightweight evidence capture is synchronous during chat. Specialist analysis is asynchronous, event-triggered and consolidated to avoid reprocessing every message. All routing and analysis shown here are simulated.';
+};
+const cognitive=[['Recall',3,'Accurate identification of Complex III inhibition and the electron transport chain components.'],['Apply',3,'Applies the pathway to explain the likely metabolic consequence.'],['Analyse',3,'Recognises that Complex I and II pathways converge at ubiquinone and examines the implication.'],['Evaluate',2,'Challenges the explanation; independent verification is reported but not authenticated.'],['Create',3,'Produces a coherent revised explanation integrating prior understanding and selected AI-supported clarification.']];
+const competencies=[['Scientific knowledge',3,'Shows sound understanding of electron transport; some detail still merits checking.'],['Application and problem solving',3,'Applies pathway knowledge to the antimycin A scenario.'],['Critical thinking',3,'Questions a potential bypass and revises the explanation; score reflects observed evidence, not inferred internal thought.'],['Scientific integrity',2,'Reports checking lecture notes; source inspection and reference accuracy remain unconfirmed.']];
+
+const longitudinal=[
+ {id:1,name:'Cell membrane transport',short:'Membrane transport',date:'Week 2',d:2,j:1,o:2,baseline:'Identified simple diffusion but initially treated all membrane movement as passive diffusion.',ai:'Introduced facilitated diffusion through channels and carrier proteins, including specificity and saturation.',decision:'Asked how carrier-mediated transport differs from simple diffusion and whether ATP is always required; requested clarification.',final:'Distinguished simple diffusion from facilitated diffusion and identified that facilitated transport can be passive or active depending on the mechanism.',interpretation:'The student moved from a broad initial explanation to a more differentiated account. The recorded question shows relevant clarification-seeking; deeper understanding would require checking transfer to a new example.'},
+ {id:2,name:'Enzyme kinetics',short:'Enzyme kinetics',date:'Week 5',d:2,j:2,o:2,baseline:'Recognised enzyme–substrate binding but gave a limited explanation of Km and Vmax.',ai:'Suggested that competitive inhibition increases apparent Km while Vmax remains unchanged under the classical model.',decision:'Questioned why Vmax would remain unchanged and compared the explanation with the class Lineweaver–Burk graph.',final:'Explained the effect of competitive inhibition on apparent Km and Vmax, with a graph-based justification.',interpretation:'The student connected an AI explanation to a course graph and asked a mechanism-focused question. The source consultation is documented in this demo record but would require authentication in a real deployment.'},
+ {id:3,name:'Electron transport chain',short:'Electron transport',date:'Week 8',d:3,j:3,o:3,baseline:'Correctly identified Complex III inhibition but initially questioned whether Complex II could bypass the block.',ai:'Explained that electrons from Complex I and Complex II converge at ubiquinone and still pass through Complex III.',decision:'Challenged the apparent bypass, then revised the explanation after tracing the shared pathway to cytochrome c and Complex IV.',final:'Integrated the convergence of electron entry pathways with the downstream block to explain reduced oxygen reduction.',interpretation:'The captured sequence shows a relevant challenge followed by a reasoned revision. The final explanation is more coherent than the initial draft, although the map cannot establish private reasoning or prove authorship.'},
+ {id:4,name:'Acid–base balance',short:'Acid–base balance',date:'Week 12',d:3,j:4,o:4,baseline:'Identified the role of bicarbonate but initially confused respiratory and metabolic compensation.',ai:'Outlined the bicarbonate buffer system and the relationship between pH, bicarbonate and carbon dioxide.',decision:'Questioned whether the proposed compensation matched the primary disturbance and checked the interpretation against the provided case data and lecture source.',final:'Distinguished the primary acid–base disturbance from the compensatory response and justified the interpretation using case values.',interpretation:'The recorded work shows increasingly connected questioning, verification and synthesis across this assignment. This is an illustrative pattern, not evidence that the student has achieved a validated developmental gain.'}
+];
+let selectedAssignment=1;
+function renderTrajectory(){
+ const box=document.getElementById('assignmentTimeline');
+ box.innerHTML=longitudinal.map(a=>`<button class="${a.id===selectedAssignment?'selected':''}" data-assignment="${a.id}"><b>Assignment ${a.id}</b><small>${a.date} · ${a.short}</small><div class="hint" style="margin-top:6px">D ${a.d}/4 · J ${a.j}/4 · O ${a.o}/4</div></button>`).join('');
+ box.querySelectorAll('button').forEach(b=>b.onclick=()=>{selectedAssignment=Number(b.dataset.assignment);renderTrajectory()});
+ const svg=document.getElementById('trajectoryChart'), left=62,top=20,w=640,h=190;
+ const y=v=>top+h-(v/4)*h, x=i=>left+i*(w/3);
+ let out='';
+ for(let v=0;v<=4;v++){out+=`<line x1="${left}" y1="${y(v)}" x2="${left+w}" y2="${y(v)}" stroke="#e6ebf1"/><text x="42" y="${y(v)+4}" font-size="11" fill="#718096">${v}</text>`}
+ const series=[['d','#3978c5'],['j','#c08a36'],['o','#258477']];
+ series.forEach(([key,color])=>{const pts=longitudinal.map((a,i)=>`${x(i)},${y(a[key])}`).join(' ');out+=`<polyline points="${pts}" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;longitudinal.forEach((a,i)=>{out+=`<circle cx="${x(i)}" cy="${y(a[key])}" r="5" fill="${color}"/>`})});
+ longitudinal.forEach((a,i)=>{out+=`<text x="${x(i)}" y="235" text-anchor="middle" font-size="11" fill="#526276">A${a.id}</text>`});
+ out+=`<text x="${left+w/2}" y="260" text-anchor="middle" font-size="10" fill="#718096">Assignment sequence (illustrative semester)</text>`;svg.innerHTML=out;
+ const a=longitudinal.find(x=>x.id===selectedAssignment);
+ document.getElementById('mapTitle').textContent=`Assignment ${a.id} · ${a.name}`;
+ document.getElementById('contributionMap').innerHTML=[
+  ['studentnode','1 · STUDENT BASELINE','Pre-AI draft',a.baseline],
+  ['ainode','2 · AI CONTEXT','AI contribution',a.ai],
+  ['decisionnode','3 · STUDENT JUDGEMENT','Question / decision',a.decision],
+  ['finalnode','4 · STUDENT SYNTHESIS','Final answer',a.final]
+ ].map(x=>`<div class="mapnode ${x[0]}"><div class="nodehead">${x[1]}</div><b style="display:block;font-size:12px;margin-bottom:7px;color:var(--navy)">${x[2]}</b><p>${x[3]}</p></div>`).join('');
+ document.getElementById('mapInterpretation').textContent=a.interpretation;
+ document.getElementById('assignmentIndicators').innerHTML=[['Draft',a.d,'Initial understanding before recorded AI interaction'],['Judge',a.j,'Questioning, evaluation and justified decisions'],['Own',a.o,'Synthesis, final reasoning and reflection']].map(x=>`<div class="indicator-row"><div><b>${x[0]}</b><br><small>${x[2]}</small></div><div class="scorebar"><div class="scorefill" style="width:${x[1]*25}%"></div></div><div class="scorevalue">${x[1]}/4</div></div>`).join('');
+}
+renderTrajectory();
+
+function renderScores(id,items){document.getElementById(id).innerHTML=items.map(x=>`<div class="scoreline"><div><b>${x[0]}</b><br><small>${x[2]}</small></div><div class="scorebar"><div class="scorefill" style="width:${x[1]*25}%"></div></div><div class="scorevalue">${x[1]}/4</div></div>`).join('')}
+renderScores('cognitiveScores',cognitive);renderScores('competencyScores',competencies);
 </script></body></html>
